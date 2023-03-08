@@ -11,6 +11,7 @@ const port = process.env.port || 3000
 // MIDDLEWARE
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+app.use(express.static('public')); 
 app.use(methodOverride('_method'));
 // app.use(session({}))
 
