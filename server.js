@@ -5,23 +5,39 @@ const app = express();
 const methodOverride = require('method-override');
 const mongoose = require('mongoose') // version 6
 
-// VARIABLES
 const port = process.env.port || 3000
+const Nomad = require('./models/nomad')
+const nomadController = require('./controllers/nomad')
+const usersController = require('./controllers/users')
+const session = require('express-session')
+
+const SESSION_SECRET = process.env.SESSION_SECRET
 
 // MIDDLEWARE
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static('public')); 
 app.use(methodOverride('_method'));
-// app.use(session({}))
+app.use(session({
+    secret: SESSION_SECRET,
+	resave: false,
+	saveUninitialized: false,
+}))
 
 // Controller
+app.use('/nomadsitters', nomadController)
 app.use('/users', usersController)
 
 // MONGODB ATLAS CONNECTION
-// mongoose.connect()
-
-
+mongoose.connect(process.env.DATABASE_URL, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true
+});
+// Database Connection Error/Success
+const db = mongoose.connection
+db.on('error', (err) => console.log(err.message + ' is MONGO not running?'));
+db.on('connected', () => console.log('MONGO is connected'));
+db.on('disconnected', () => console.log('MONGO is disconnected'));
 
 
 app.listen(port, () => console.log(`server is listening on port: ${port}`))
