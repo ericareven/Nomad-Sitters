@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Nomad = require('../models/nomad')
+const Nomadsits = require('../models/nomad')
+const nomadsitsSeed = require('../models/seed')
 
 // custom middleware to require authentication on routes
 const authRequired = (req, res, next) => {
@@ -15,15 +16,32 @@ const authRequired = (req, res, next) => {
 }
 
 // ROUTES
+// SEED
+// Nomadsits.create(nomadsitsSeed, (err, data) => {
+//   if (err) console.log(err.message)
+//   console.log('added seed data')
+// })
 
-// INDEX
+// Nomadsits.collection.drop();
+
+Nomadsits.countDocuments({}, (err, data) => {
+    if (err) console.log(err.message)
+    console.log(`There are ${data} sits in this database`)
+})
+
+
+// Home
 router.get('/', (req,res) => {
-    res.render('index.ejs')
+    res.render('home.ejs')
 });
 
-// router.get('/', (req,res) => {
+// INDEX
+router.get('/index', (req, res) => { //
+    res.render("index.ejs", {
+        allNomadsits: Nomadsits
+    })
+});
 
-// });
 
 
 

@@ -6,7 +6,8 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose') // version 6
 
 const port = process.env.port || 3000
-const Nomad = require('./models/nomad')
+const Nomadsits = require('./models/nomad')
+const nomadsitsSeed = require('./models/seed')
 const nomadController = require('./controllers/nomad')
 const usersController = require('./controllers/users')
 const session = require('express-session')
