@@ -5,10 +5,19 @@
     </header>
     <body>
         <h1><%=nomadsits.title%></a></h1>
+        <button><a href="/nomadsitters/<%=nomadsits.id; %>/edit">Edit</a></button><br>
         <%=nomadsits.country%>, </a><%=nomadsits.city%></a><br>
         <%=nomadsits.date%></a><br>
-        House Sit: <input type="checkbox" id="housesit" name="housesit"><br>
-        Pet Sit: <input type="checkbox" id="petsit" name="petsit"><br>
+        House Sit: <input type="checkbox" id="housesit" name="housesit"
+            <% if(nomadsits.housesit === true){ %>
+                checked
+            <% } %>
+        ><br>
+        Pet Sit: <input type="checkbox" id="petsit" name="petsit"
+            <% if(nomadsits.petsit === true){ %>
+                checked
+            <% } %>
+        ><br>
         <form method="POST" action="/nomadsitters/<%=nomadsits.id%>?_method=DELETE">
             <input type="submit" value="DELETE">
         </form>

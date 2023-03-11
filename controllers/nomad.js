@@ -9,7 +9,8 @@ const authRequired = (req, res, next) => {
         next()
     } else {
         // if there is no user
-        res.send('You must be signed in to do that')
+        // res.send('You must be signed in to do that')
+        res.redirect('/users/signin')
         // or 
         // res.redirect('/users/signin')
     }
@@ -63,6 +64,8 @@ router.post('/index', (req, res) => {
         req.body.petsit = false
     }
     Nomadsits.create(req.body, (err, createdNomadsits) => {
+        if(err) {console.log(err.message)}
+        console.log(createdNomadsits)
         res.redirect('/nomadsitters/index')
     })
 })
@@ -77,19 +80,39 @@ router.get('/:id', (req,res) => {
     })
 })
 
+// EDIT
+router.get('/:id/edit', (req,res) => {
+    Nomadsits.findById(req.params.id, (err, foundSits) => {
+        if(err){console.log(err.message)}
+        res.render(
+            'edit.ejs', {
+                nomadsits: foundSits
+            }
+        )
+    })
+})
+
+// PUT
+router.put('/:id', (req, res) => {
+    if(req.body.housesit === 'on') {
+        req.body.housesit = true
+    } else {
+        req.body.housesit = false
+    }
+    if(req.body.petsit === 'on') {
+        req.body.petsit = true
+    } else {
+        req.body.petsit = false
+    }
+    Nomadsits.findByIdAndUpdate(req.params.id, req.body, (err, updatedSit) => {
+        console.log(updatedSit)
+        res.redirect('/nomadsitters/index')
+    })
+})
+
 // DELETE
 // Auth Required
-// router.delete('/:id', authRquired, (req, res) => {
-//     Nomadsits.findByIdAndDelete(req.params.id, (err, deletedSit) => {
-//         if(err) {
-//             console.log(err.message)
-//         } else {
-//             console.log(deletedSit)
-//             res.redirect('/nomadsitters/index')
-//         }
-//     })
-// })
-router.delete('/:id', (req, res) => {
+router.delete('/:id', authRequired, (req, res) => {
     Nomadsits.findByIdAndDelete(req.params.id, (err, deletedSit) => {
         if(err) {
             console.log(err.message)
@@ -99,6 +122,8 @@ router.delete('/:id', (req, res) => {
         }
     })
 })
+
+
 
 
 

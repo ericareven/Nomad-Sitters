@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Edit Fruit Page</h1>
+        <form action="/nomadsitters/<%=nomadsits.id%>?_method=PUT" method="POST">
+    		Title: <input type="text" name="title" value="<%=nomadsits.title%>" /><br>
+			Country: <input type="text" name="country" value="<%=nomadsits.country%>" /><br>
+            City: <input type="text" name="city" value="<%=nomadsits.ccity%>" /><br>
+            Date: <input type="text" name="date" placeholder="01/01/25 - 02/02/25"/><br>
+			Housesit: <input type="checkbox" name="housesit" 
+            <% if(nomadsits.housesit === true){ %>
+                checked
+            <% } %>
+            /><br>
+            Petsit: <input type="checkbox" name="petsit" 
+                <% if(nomadsits.petsit === true){ %>
+                    checked
+                <% } %>
+            /><br>
+            <input type="submit" name="" value="Submit Changes"/>
+        </form>
+    </body>
+</html>
