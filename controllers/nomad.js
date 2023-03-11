@@ -77,7 +77,28 @@ router.get('/:id', (req,res) => {
     })
 })
 
-
+// DELETE
+// Auth Required
+// router.delete('/:id', authRquired, (req, res) => {
+//     Nomadsits.findByIdAndDelete(req.params.id, (err, deletedSit) => {
+//         if(err) {
+//             console.log(err.message)
+//         } else {
+//             console.log(deletedSit)
+//             res.redirect('/nomadsitters/index')
+//         }
+//     })
+// })
+router.delete('/:id', (req, res) => {
+    Nomadsits.findByIdAndDelete(req.params.id, (err, deletedSit) => {
+        if(err) {
+            console.log(err.message)
+        } else {
+            console.log(deletedSit)
+            res.redirect('/nomadsitters/index')
+        }
+    })
+})
 
 
 

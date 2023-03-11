@@ -28,7 +28,7 @@ module.exports = [
         city: 'New York',
         housesit: true,
         petsit: true,
-        title: '23rd floor, GREAT VIEW, 1 Dog',
+        title: 'GREAT VIEW of Central Park, 1 Dog',
         date: '02/12/24 - 02/25/24',
    },
    {

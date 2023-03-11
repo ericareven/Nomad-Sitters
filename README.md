@@ -13,3 +13,7 @@ C -- CREATE -- make a new resource from scratch
 E -- EDIT -- show the FORM that allows the user to update a resource 
 S -- SHOW -- show one individual resource
 */
+
+ <div class="deleteEdit">
+   
+</div>

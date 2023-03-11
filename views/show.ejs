@@ -7,9 +7,13 @@
         <h1><%=nomadsits.title%></a></h1>
         <%=nomadsits.country%>, </a><%=nomadsits.city%></a><br>
         <%=nomadsits.date%></a><br>
-        
+        House Sit: <input type="checkbox" id="housesit" name="housesit"><br>
+        Pet Sit: <input type="checkbox" id="petsit" name="petsit"><br>
+        <form method="POST" action="/nomadsitters/<%=nomadsits.id%>?_method=DELETE">
+            <input type="submit" value="DELETE">
+        </form>
         <nav>
-            <a href="/nomadsitters">Back</a>
+            <a href="/nomadsitters/index">Back</a>
         </nav>
     </body>
     <!-- <footer>
