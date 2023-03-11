@@ -36,14 +36,30 @@ router.get('/', (req,res) => {
 });
 
 // INDEX
-router.get('/index', (req, res) => { //
-    res.render("index.ejs", {
-        allNomadsits: Nomadsits
+router.get('/index', (req, res) => {
+    Nomadsits.find({}, (err, foundSits) => {
+        if(err){console.log(err.message)}   
+        res.render("index.ejs", {
+            nomadsits: foundSits
+        })
     })
+    
 });
 
+// NEW
+router.get('/new', (req, res) => {
+    res.render('new.ejs')
+})
 
-
+// SHOW
+router.get('/:id', (req,res) => {
+    Nomadsits.findById(req.params.id, (err, foundSits) => {
+        if(err){console.log(err.message)}
+        res.render('show.ejs', {
+            nomadsits: foundSits
+        })
+    })
+})
 
 
 
