@@ -51,6 +51,22 @@ router.get('/new', (req, res) => {
     res.render('new.ejs')
 })
 
+router.post('/index', (req, res) => {
+    if(req.body.housesit === 'on'){
+        req.body.housesit = true
+    } else {
+        req.body.housesit = false
+    }
+    if(req.body.petsit === 'on'){
+        req.body.petsit = true
+    } else {
+        req.body.petsit = false
+    }
+    Nomadsits.create(req.body, (err, createdNomadsits) => {
+        res.redirect('/nomadsitters/index')
+    })
+})
+
 // SHOW
 router.get('/:id', (req,res) => {
     Nomadsits.findById(req.params.id, (err, foundSits) => {
