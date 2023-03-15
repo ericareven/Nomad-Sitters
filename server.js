@@ -26,9 +26,14 @@ app.use(session({
 	saveUninitialized: false,
 }))
 
+app.get('/', (req,res) => {
+	res.redirect('/nomadsitters')
+})
+
 // Controller
 app.use('/nomadsitters', nomadController)
 app.use('/users', usersController)
+
 
 // MONGODB ATLAS CONNECTION
 mongoose.connect(process.env.DATABASE_URI, {

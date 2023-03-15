@@ -7,7 +7,7 @@ body {
     justify-content: center;
     text-align: center;
     color: pink; 
-    font-family: 'Abel', sans-serif;
+    font-family: 'Amatic SC', cursive;
     /* font-family: 'Amatic SC', cursive;
     font-family: 'Gruppo', cursive;
     font-family: 'Kalam', cursive;
@@ -45,7 +45,6 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     padding: 0 4px;
-    
 }
 /* Create two equal columns that sits next to each other */
 .collagecol {
@@ -78,6 +77,7 @@ h2 {
 .trash {
     cursor: pointer;
     color:  rgb(216, 47, 75);
+    content: url("/icons/trash3.svg");
 }
 /* .trash:hover {
     visibility: visible;
@@ -110,6 +110,9 @@ h2 {
     padding: 4px 12px;
     font-size: 27px;
 }
+/* .editParts {
+    line-height: 20px;
+} */
 .delete {
     font-family: 'Amatic SC', cursive;
     font-weight: bold;

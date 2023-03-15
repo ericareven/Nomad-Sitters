@@ -96,7 +96,7 @@ router.get('/:id', (req,res) => {
 })
 
 // EDIT
-router.get('/:id/edit', (req,res) => {
+router.get('/:id/edit', authRequired, (req,res) => {
     Nomadsits.findById(req.params.id, (err, foundSits) => {
         if(err){console.log(err.message)}
         res.render(
