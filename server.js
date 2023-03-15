@@ -6,7 +6,7 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose') // version 6
 const path = require('path')
 
-const port = process.env.port || 3000
+const PORT = process.env.PORT || 3000
 const Nomadsits = require('./models/nomad')
 const nomadsitsSeed = require('./models/seed')
 const nomadController = require('./controllers/nomad')
@@ -50,4 +50,4 @@ db.on('connected', () => console.log('MONGO is connected'));
 db.on('disconnected', () => console.log('MONGO is disconnected'));
 
 
-app.listen(port, () => console.log(`server is listening on port: ${port}`))
+app.listen(PORT, () => console.log(`server is listening on port: ${PORT}`))
