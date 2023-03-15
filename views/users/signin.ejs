@@ -1,22 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>User Sign in</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Sign In</title>
   </head>
   <body>
     <h1>Sign In</h1>
     <form action="/users/signin" method="POST">
-      <fieldset>
-        <label for="username">Username:</label>
+      <fieldset class="signinreg" >
+        <label class="label" for="username">Username: </label>
         <input type="text" name="username">
       </fieldset>
-      <fieldset>
-        <label for="password">Password:</label>
+      <fieldset class="signinreg" >
+        <label class="label" for="password">Password: </label>
         <input type="password" name="password">
       </fieldset><br>
       <input type="submit" value="Sign In">
       <p>Don't have an account?<a style="text-decoration: none;" href="/users/register"> Register</a></p>
     </form>
+    <h2 style="font-size: 30px;">Travel Awaits</h2>
+    <div class="collagerow">
+      <div class="collagecol">
+        <img src="/images/travel1.jpg">
+        <img src="/images/travel3.jpg">
+        <img src="/images/travel4.jpg">
+      </div>
+      <div class="collagecol">
+        <img src="/images/travel5.jpg">
+        <img src="/images/travel6.jpg">
+        <img src="/images/travel7.jpg">
+      </div>
+      <div class="collagecol">
+        <img src="/images/travel8.jpg">
+        <img src="/images/travel9.jpg">
+        <img src="/images/travel12.jpg">
+        <img src="/images/travel13.jpg">
+      </div>
+      <div class="collagecol">
+        <img src="/images/travel10.jpg">
+        <img src="/images/travel2.jpg">
+        <img src="/images/travel11.jpg"> 
+      </div>
+    </div>
   </body>
+  <footer>
+    <%- include ('../partials/footer.ejs') %>
+  </footer>
 </html>

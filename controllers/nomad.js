@@ -36,6 +36,15 @@ router.get('/', (req,res) => {
     res.render('home.ejs')
 });
 
+// SignedIn Home
+// router.get('/username/:id', (req,res) => {
+//     req.body.username
+//     res.render('home.ejs', {
+        
+//     })
+    
+// })
+
 // About
 router.get('/about', (req,res) => {
     res.render('about.ejs')
