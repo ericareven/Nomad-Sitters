@@ -34,11 +34,14 @@ app.get('/', (req,res) => {
 app.use('/nomadsitters', nomadController)
 app.use('/users', usersController)
 
+// How to connect to the database either via heroku or locally
+const MONGODB_URI = process.env.MONGODB_URI;
+mongoose.set('strictQuery', true)
 
 // MONGODB ATLAS CONNECTION
-mongoose.connect(process.env.MONGODB_URI, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true
+// May or may not need these depending on your Mongoose version
+mongoose.connect(MONGODB_URI , { 
+    useNewUrlParser: false,
 });
 // Database Connection Error/Success
 const db = mongoose.connection
