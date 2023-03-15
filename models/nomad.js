@@ -7,6 +7,7 @@ const nomadSchema = new mongoose.Schema({
     petsit: Boolean,
     title: {type: String, required: true},
     date: {type: String, required: true},
+    img: String
 })
 
 const Nomadsits = mongoose.model('Nomadsits', nomadSchema);

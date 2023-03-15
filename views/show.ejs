@@ -4,28 +4,38 @@
         <%- include ('./partials/header.ejs') %>
     </header>
     <body>
-        <h1><%=nomadsits.title%></a></h1>
-        <button><a href="/nomadsitters/<%=nomadsits.id; %>/edit">Edit</a></button><br>
-        <%=nomadsits.city%>, </a><%=nomadsits.country%></a><br>
-        <%=nomadsits.date%></a><br>
-        House Sit: <input type="checkbox" id="housesit" name="housesit"
+        <h1 class="show"><%=nomadsits.title%></h1>
+        <div class="showdiv">
+            <%=nomadsits.city%>, <%=nomadsits.country%><br>
+        <%=nomadsits.date%><br>
+        House Sit: <input type="checkbox" id="housesit" name="housesit" disabled="disabled" 
             <% if(nomadsits.housesit === true){ %>
+                style="outline:2px solid green;"
                 checked
             <% } %>
-        ><br>
-        Pet Sit: <input type="checkbox" id="petsit" name="petsit"
+        >
+        <br>
+        Pet Sit: <input type="checkbox" id="petsit" name="petsit" disabled="disabled" 
             <% if(nomadsits.petsit === true){ %>
+                style="outline:2px solid green;"
                 checked
             <% } %>
-        ><br>
-        <form method="POST" action="/nomadsitters/<%=nomadsits.id%>?_method=DELETE">
-            <input type="submit" value="DELETE">
+        >
+        <br>
+        <br>
+        <button style="padding: 0; border: none;"><a href="/nomadsitters/<%=nomadsits.id; %>/edit" class="edit">Edit</a></button>
+        <br>
+        <img src="<%= nomadsits.img %>" alt="Image of <%= nomadsits.title %>" style="padding: 20px;">
+        <br>
+        </div>
+        <form method="POST" action="/nomadsitters/<%=nomadsits.id%>?_method=DELETE" style="padding: 0; border: none;">
+            <input type="submit" value="Delete" class="delete">
         </form>
-        <nav>
+        <nav style="padding: 50px;">
             <a href="/nomadsitters/index">Back</a>
         </nav>
     </body>
-    <!-- <footer>
+    <footer>
         <%- include ('./partials/footer.ejs') %>
-    </footer> -->
+    </footer>
 </html>

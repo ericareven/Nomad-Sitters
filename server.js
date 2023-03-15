@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
 const mongoose = require('mongoose') // version 6
+const path = require('path')
 
 const port = process.env.port || 3000
 const Nomadsits = require('./models/nomad')
@@ -17,7 +18,7 @@ const SESSION_SECRET = process.env.SESSION_SECRET
 // MIDDLEWARE
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(express.static('public')); 
+app.use(express.static(path.join(__dirname, 'public'))); 
 app.use(methodOverride('_method'));
 app.use(session({
     secret: SESSION_SECRET,

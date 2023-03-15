@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Amatic+SC&family=Gruppo&family=Kalam:wght@300&family=Rampart+One&family=Satisfy&family=Shantell+Sans:wght@300&family=Sigmar+One&display=swap');
 body {
+    background-color: rgb(16, 16, 76);
     display: flexbox;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    color: pink; 
     font-family: 'Abel', sans-serif;
     /* font-family: 'Amatic SC', cursive;
     font-family: 'Gruppo', cursive;
@@ -18,14 +20,73 @@ h1 {
     display: flexbox;
     align-items: center;
     justify-content: center;
-    font-family: 'Rampart One', cursive;
+    font-family: 'Sigmar One', cursive;
+    padding-top: 0;
+    color: pink; 
+}
+h2 {
+    padding: 5px;
+    color: pink; 
+    font-family: 'Amatic SC', cursive;
+}
+.show {
+    padding: 30px;
+    width: 80%;
+    justify-content: center;
+    margin: auto;
+}
+.showdiv {
+    padding: 15px;
+    line-height: 30px;
+    font-family: 'Shantell Sans', cursive;
+}
+.mission {
+    letter-spacing: 2px;
+    font-family: 'Sigmar One', cursive;
+    color: pink; 
+}
+.about {
+    width: 70%;
+    color: pink; 
+    font-family: 'Kalam', cursive;
+    text-align: center;
+    margin: auto;
+    font-size: 20px;
+}
+.aboutimgs {
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    justify-content: center;
+    height: 200px;
+}
+.edit {
+    background-color: rgb(216, 47, 75);
+    color: rgb(221, 184, 19);
+    border: none; text-decoration:
+    none; padding: 4px 12px;
+    font-size: 27px;
+}
+.delete {
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    background-color: rgb(216, 47, 75);
+    color: rgb(221, 184, 19);
+    border: none;
+    text-decoration: none;
+    padding: 3px 9px;
+    font-size: 22px;
 }
 header {
     /* display: flexbox;
     flex-direction: row; */
     /* align-items: left;
     justify-content: left; */
+    
     text-align: left;
+}
+footer {
+    color: pink; 
 }
 .headernav {
     padding: 15px;
@@ -35,56 +96,94 @@ header {
 }
 .signinreg {
     font-family: 'Amatic SC', cursive;
-    font-weight: bold;  
+    font-weight: bold; 
 }
 a {
     text-decoration: none;
     padding: 5px;
+    color: pink; 
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
 }
-.slider {
-    width: 500px;
-    height: 300px;
-    background-color: yellow;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0px;
+li {
+    list-style-type: none;
+}
+.index {
+    display: grid;
+    padding: 10px 5px; 
+    margin: auto; 
+    width: 250px; 
+    line-height: 24px;
+}
+.list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 10px;
+    
+}
+.indexitems {
+    border-color: rgb(226, 173, 13);
+    border-style: solid;
+    padding: 5px;
+    font-family: 'Amatic SC', cursive;
+}
+/* Image Slider */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 0;
+}
+img {
+    max-width: 70%;
+}
+.slider-container{
+    height: 60%;
+    width: 98%;
+    position: relative;
+    overflow: hidden; 
     text-align: center;
-    overflow: hidden;
-  }
-  .image-container {
-    width: 1500px;
-    background-color: pink;
-    height: 300px;
-    clear: both;
-    position: relative;
-    -webkit-transition: left 2s;
-    -moz-transition: left 2s;
-    -o-transition: left 2s;
-    transition: left 2s;
-  }
-  .imgSlides {
-    float: left;
-    margin: 0px;
-    padding: 0px;
-    position: relative;
-  }
-  #slide-1:target ~ .image-container {
-    left: 0px;
-  }
-  #slide-2:target ~ .image-container {
-    left: -500px;
-  }
-  #slide-3:target ~ .image-container {
-    left: -1000px;
-  }
-  .buttons {
-    position: relative;
-    top: -20px;
-  }
-  .buttons a {
+    margin: auto;
+}
+.menu {
+    position: absolute;
+    left: 0;
+    z-index: 900;
+    width: 100%;
+    bottom: 0;
+}
+.menu label {
+    cursor: pointer;
     display: inline-block;
-    height: 15px;
-    width: 15px;
+    width: 16px;
+    height: 16px;
+    background: #fff;
     border-radius: 50px;
-    background-color: lightgreen;
-  }
+    margin: 0 .2em 1em;
+}
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 10;
+    padding: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    transition: left 0s .75s;
+}
+[id^="slide"]:checked + .slide {
+    left: 0;
+    z-index: 100;
+    transition: left .65s ease-out;
+}
+.slide-1 {
+    content: url("/images/img1.jpg");
+}
+.slide-2 {
+    content: url("/images/img2.jpg");
+}
+.slide-3 {
+    content: url("/images/img3.jpg");
+}

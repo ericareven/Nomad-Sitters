@@ -5,19 +5,19 @@
     </header>
     <body>
         <h1>Find the perfect home away from home</h1>
-        <ul>
+        <ul class="list">
             <% for(let i = 0; i < nomadsits.length; i++){ %>
-                <li class="list">
-                    <fieldset style="padding: 20px; margin: auto; width: 250px; line-height: 40px;">
-                        <a href="/nomadsitters/<%=nomadsits[i].id %>">
-                            <%=nomadsits[i].title; %></a><br>
-                            <%=nomadsits[i].country; %></a>
-                    </fieldset>
+                <li>
+                    <div class="index">
+                        <a class="indexitems" href="/nomadsitters/<%=nomadsits[i].id %>">
+                            <p style="font-size: 18px;"><%=nomadsits[i].title; %></p>
+                            <p style="font-size: 14px;"><%=nomadsits[i].country; %></p></a>
+                    </div>
                 </li>
             <% } %>
         </ul>
     </body>
-    <!-- <footer>
+    <footer>
         <%- include ('./partials/footer.ejs') %>
-    </footer> -->
+    </footer>
 </html>

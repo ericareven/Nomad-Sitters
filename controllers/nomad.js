@@ -36,6 +36,11 @@ router.get('/', (req,res) => {
     res.render('home.ejs')
 });
 
+// About
+router.get('/about', (req,res) => {
+    res.render('about.ejs')
+});
+
 // INDEX
 router.get('/index', (req, res) => {
     Nomadsits.find({}, (err, foundSits) => {
@@ -69,6 +74,7 @@ router.post('/index', (req, res) => {
         res.redirect('/nomadsitters/index')
     })
 })
+
 
 // SHOW
 router.get('/:id', (req,res) => {

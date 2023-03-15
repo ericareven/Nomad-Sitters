@@ -5,17 +5,18 @@
     <title>User Registration</title>
   </head>
   <body>
-    <h1>Register A New User</h1>
+    <h1>Join the Nomad Community</h1>
+    <h2>Create New Account</h2>
     <form action="/users/register" method="POST">
-      <fieldset> 
+      <fieldset style="padding: 20px; width: 250px; line-height: 40px;"> 
         <!-- fieldset is just for styling --- it adds a box around its children -->
         <label for="username">Username:</label>
         <input type="text" name="username">
       </fieldset>
-      <fieldset>
+      <fieldset style="padding: 20px; width: 250px; line-height: 40px;">
         <label for="password">Password:</label>
         <input type="password" name="password">
-      </fieldset>
+      </fieldset><br>
       <input type="submit" value="Sign Up">
     </form>
   </body>

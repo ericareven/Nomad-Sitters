@@ -14,6 +14,10 @@ module.exports = [
         petsit: true,
         title: 'Two Dogs and Two Cats and Lots of Plants',
         date: '06/05/24 - 06/26/24',
+        img: '/seedimages/dog1.jpg',
+        img: '/seedimages/dog2.jpg',
+        img: '/seedimages/cat4.jpg',
+        img: '/seedimages/cat6.jpg',
    },
    {
         country: 'Germany',
@@ -22,6 +26,7 @@ module.exports = [
         petsit: true,
         title: 'Munich One Dog, only speaks German',
         date: '01/12/24 - 01/20/24',
+        img: '/seedimages/dog4.jpg',
    },
    {
         country: 'United States',
@@ -30,6 +35,7 @@ module.exports = [
         petsit: true,
         title: 'GREAT VIEW of Central Park, 1 Dog',
         date: '02/12/24 - 02/25/24',
+        img: '/seedimages/dog3.jpg',
    },
    {
         country: 'United States',
@@ -54,6 +60,9 @@ module.exports = [
         petsit: true,
         title: 'Three Cats, in heart of Berlin',
         date: '08/10/24 - 08/21/24',
+        img: '/seedimages/cat3.jpg',
+        img: '/seedimages/cat8.jpg',
+        img: '/seedimages/cat7.jpg',
    },
    {
         country: 'Canada',
@@ -62,6 +71,8 @@ module.exports = [
         petsit: true,
         title: 'One Friendly Snake and One Cat w/ an attitude',
         date: '02/22/24 - 02/28/24',
+        img: '/seedimages/cat2.jpg',
+        img: '/seedimages/snake.jpg',
    },
    {
         country: 'Italy',
@@ -78,14 +89,19 @@ module.exports = [
         petsit: true,
         title: 'Two cats, one dog, near beach',
         date: '07/18/24 - 07/26/24',
+        img: '/seedimages/cat1.jpg',
+        img: '/seedimages/cat5.jpg',
+        img: '/seedimages/dog6.jpg',
    },
    {
         country: 'Spain',
         city: 'Seville',
         housesit: true,
         petsit: true,
-        title: 'One cat, one bird',
+        title: 'One dog, one bird',
         date: '05/08/24 - 05/16/24',
+        img: '/seedimages/bird.jpg',
+        img: '/seedimages/dog7.jpg',
    },
    {
         country: 'Norway',
@@ -94,5 +110,8 @@ module.exports = [
         petsit: true,
         title: 'Three Dogs',
         date: '09/01/24 - 09/10/24',
+        img: '/seedimages/dog5.jpg',
+        img: '/seedimages/dog9.jpg',
+        img: '/seedimages/dog10.jpg',
    }
 ] // 12
