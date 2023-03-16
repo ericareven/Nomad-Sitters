@@ -6,21 +6,30 @@
     <body>
         <h1>Edit Page</h1>
         <form action="/nomadsitters/<%=nomadsits.id%>?_method=PUT" method="POST">
-    		Title: <input class="editParts" type="text" name="title" value="<%=nomadsits.title%>" /><br>
-			Country: <input class="editParts" type="text" name="country" value="<%=nomadsits.country%>" /><br>
-            City: <input class="editParts" type="text" name="city" value="<%=nomadsits.city%>" /><br>
-            Date: <input class="editParts" type="text" name="date" placeholder="01/01/25 - 02/02/25"/><br>
-			Housesit: <input class="editParts" type="checkbox" name="housesit" 
-            <% if(nomadsits.housesit === true){ %>
-                checked
-            <% } %>
-            /><br>
-            Petsit: <input class="editParts" type="checkbox" name="petsit" 
-                <% if(nomadsits.petsit === true){ %>
+            <div class="new">
+                Title: <input class="newform" type="text" name="title" value="<%=nomadsits.title%>" />
+                Country: <input class="newform" type="text" name="country" value="<%=nomadsits.country%>" />
+                City: <input class="newform" type="text" name="city" value="<%=nomadsits.city%>" />
+                Date: <input class="newform" type="text" name="date" placeholder="01/01/25 - 02/02/25"/>
+            </div>
+    		<div class="sitcheck">
+                Housesit: <input class="sitchecklab" type="checkbox" name="housesit" 
+                <% if(nomadsits.housesit === true){ %>
                     checked
                 <% } %>
-            /><br><br>
-            <input type="submit" name="" value="Submit Changes"/>
+                />
+                Petsit: <input class="sitchecklab" type="checkbox" name="petsit" 
+                    <% if(nomadsits.petsit === true){ %>
+                        checked
+                    <% } %>
+                />
+            </div>
+			<div class="newsub">
+                <input type="submit" name="" value="Submit Changes"/>
+            </div>
         </form>
+        <nav style="padding: 10px; font-size: 22px;">
+            <a href="/nomadsitters/index">Back</a>
+        </nav>
     </body>
 </html>

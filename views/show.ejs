@@ -32,11 +32,11 @@
             <img src="<%= nomadsits.img4 %>" style="padding: 10px;">
         </div>
         </div>
-        <form class="trash" method="POST" action="/nomadsitters/<%=nomadsits.id%>?_method=DELETE" style="padding: 0; border: none;">
-            <img fill="currentColor" src="/icons/trash3.svg">
-            <input type="submit" value="" class="delete">
+        <form class="trash" method="POST" action="/nomadsitters/<%=nomadsits.id%>?_method=DELETE" style="padding: 10px; border: none;">
+            <!-- <img src="/icons/trash3.svg"> -->
+            <input type="submit" value="Delete" class="delete">
         </form>
-        <nav style="padding: 50px; font-size: 20px;">
+        <nav style="padding: 0; font-size: 20px;">
             <a href="/nomadsitters/index">Back</a>
         </nav>
     </body>

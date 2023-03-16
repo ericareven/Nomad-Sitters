@@ -3,8 +3,10 @@
     <header>
         <%- include ('./partials/header.ejs') %>
     </header>
-    <!-- <title>International House & Pet Sitting</title> -->
     <body>
+        <h3><% if(currentUser){ %>
+            Welcome
+        <%=currentUser%>!<% } %> </h3>
         <h1>Nomad Sitters</h1>
         <div class="slider-container">
             <div class="menu">

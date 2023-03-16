@@ -33,7 +33,11 @@ Nomadsits.countDocuments({}, (err, data) => {
 
 // Home
 router.get('/', (req,res) => {
-    res.render('home.ejs')
+    if(!req.session.currentUser){
+        res.render('home.ejs', {currentUser: ''})
+    } else {
+        res.render('home.ejs', {currentUser: req.session.currentUser.username})
+    }
 });
 
 // SignedIn Home
@@ -47,7 +51,9 @@ router.get('/', (req,res) => {
 
 // About
 router.get('/about', (req,res) => {
-    res.render('about.ejs')
+    res.render('about.ejs', {
+        currentUser: req.session.currentUser
+    })
 });
 
 // INDEX
@@ -55,7 +61,8 @@ router.get('/index', (req, res) => {
     Nomadsits.find({}, (err, foundSits) => {
         if(err){console.log(err.message)}   
         res.render("index.ejs", {
-            nomadsits: foundSits
+            nomadsits: foundSits,
+            currentUser: req.session.currentUser
         })
     })
     
@@ -63,7 +70,9 @@ router.get('/index', (req, res) => {
 
 // NEW
 router.get('/new', (req, res) => {
-    res.render('new.ejs')
+    res.render('new.ejs', {
+        currentUser: req.session.currentUser
+    })
 })
 
 router.post('/index', (req, res) => {
@@ -90,7 +99,8 @@ router.get('/:id', (req,res) => {
     Nomadsits.findById(req.params.id, (err, foundSits) => {
         if(err){console.log(err.message)}
         res.render('show.ejs', {
-            nomadsits: foundSits
+            nomadsits: foundSits,
+            currentUser: req.session.currentUser
         })
     })
 })
@@ -101,7 +111,8 @@ router.get('/:id/edit', authRequired, (req,res) => {
         if(err){console.log(err.message)}
         res.render(
             'edit.ejs', {
-                nomadsits: foundSits
+                nomadsits: foundSits,
+                currentUser: req.session.currentUser
             }
         )
     })

@@ -5,14 +5,20 @@
     </header>
 	<body>
 		<h1>Create a New Listing</h1>
-		<form class="new" action="/nomadsitters/index" method="POST">
-			Title: <input class="newform" type="text" name="title" /><br>
-			Country: <input class="newform" type="text" name="country" /><br>
-            City: <input class="newform" type="text" name="city" /><br>
-            Date: <input class="newform" type="text" name="date" placeholder="01/01/25 - 02/02/25"/><br>
-			Housesit: <input class="newform" type="checkbox" name="housesit" /><br>
-            Petsit: <input class="newform" type="checkbox" name="petsit" /><br>
-			<input class="newform" type="submit" name="" value="Add Listing" />
+		<form action="/nomadsitters/index" method="POST">
+            <div class="new">
+                Title: <input class="newform" type="text" name="title" />
+                Country: <input class="newform" type="text" name="country" />
+                City: <input class="newform" type="text" name="city" />
+                Date: <input class="newform" type="text" name="date" placeholder="01/01/25 - 02/02/25"/>
+            </div>
+            <div class="sitcheck">
+                Housesit: <input class="sitchecklab" type="checkbox" name="housesit" />
+                Petsit: <input  class="sitchecklab" type="checkbox" name="petsit" />
+            </div><br>
+            <div class="newsub" >
+                <input type="submit" name="" value="Add Listing" />
+            </div>
 		</form>
 	</body>
     <footer>
