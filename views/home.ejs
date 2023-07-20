@@ -4,6 +4,9 @@
         <%- include ('./partials/header.ejs') %>
     </header>
     <body>
+        <div>
+            
+        </div>
         <h3><% if(currentUser){ %>
             Welcome
         <%=currentUser%>!<% } %> </h3>
@@ -24,7 +27,7 @@
             <input id="slide-dot-3" type="radio" name="slides">
             <div class="slide slide-3"></div>
         </div>
-        <h2>Join the nomad community and find a sitter or job perfect for you!</h2>
+        <h2 style="padding-bottom: 2rem;">Join the nomad community and find a sitter or job perfect for you!</h2>
     </body>
     <footer>
         <%- include ('./partials/footer.ejs') %>
